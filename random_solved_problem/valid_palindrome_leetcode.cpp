@@ -1,5 +1,8 @@
 // Leetcode: https://leetcode.com/problems/valid-palindrome/
 // solved at december 12, 2023. 11:00 pm
+#include <bits/stdc++.h>
+using namespace std;
+
 class Solution
 {
 public:
@@ -38,3 +41,15 @@ public:
         return is_palindrome;
     }
 };
+
+int main() 
+{
+    Solution s;
+    cout << s.isPalindrome("racecar") << endl;
+
+    if (s.isPalindrome("A man, a plan, a canal: Panama")) {
+        cout << "true" << endl;
+    }
+
+        return 0;
+}
