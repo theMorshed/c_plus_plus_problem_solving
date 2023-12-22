@@ -9,12 +9,13 @@ class Solution
 public:
     int search(string pat, string txt)
     {
-        // code here
+        // declare variable and two frequency array 
         int n = txt.size();
         int k = pat.size();
         int freq1[26] = {0};
         int freq2[26] = {0};
 
+        // make pattern fequency array from given pat string
         for (int i = 0; i < k; i++)
         {
             freq1[pat[i] - 'a']++;
@@ -25,12 +26,15 @@ public:
         {
             freq2[txt[j] - 'a']++;
 
+            // if window size less than k then increase window
             if (j < k - 1)
             {
                 j++;
             }
             else
             {
+                // after hit window size calculate is anagram there
+                // after calculation window move with i and j variable
                 bool is_anagram = true;
                 for (int m = 0; m < 26; m++)
                 {

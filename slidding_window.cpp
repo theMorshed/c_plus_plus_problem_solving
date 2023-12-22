@@ -10,18 +10,18 @@ int main()
     int n, k;
     cin >> n;
     int arr[n];
+    int sum = 0, count = 1;
 
     for (int i = 0; i < n; i++)
         cin >> arr[i];
 
     cin >> k;
     int i = 0, j = 0;
-    multiset<int, greater<int>> maximum;
 
-    // start main loop for slidding window
+    // start loop for slidding window
     while (j < n)
     {
-        maximum.insert(arr[j]);
+        sum += arr[j];
 
         // if window size less than k then increase window
         if (j < k - 1)
@@ -32,8 +32,12 @@ int main()
         {
             // after hit window size calculate the other calculation
             // after calculation window move with i and j variable
-            cout << *maximum.begin() << endl;
-            maximum.erase(maximum.find(arr[i]));
+            if (count == 1) {
+                cout << "Sum of all slides of size " << k << ": ";
+                count--;
+            }
+            cout << sum << " ";
+            sum -= arr[i];
             i++;
             j++;
         }

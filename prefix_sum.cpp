@@ -7,6 +7,7 @@ int main()
     long long sum = arr[0];
     int n = arr.size();
 
+    // calculate prefix sum and store it
     for (int i = 1; i < n; i++) {
         sum += arr[i];
         arr[i] = sum;
